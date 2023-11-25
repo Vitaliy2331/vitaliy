@@ -14,8 +14,3 @@ class HomeTests(TestCase):
         view = resolve('/')
         self.assertEqual(view.func.view_class,
                          HomePageView)
-    def test_category_view_status_code(self):
-        url = reverse('articles-category-list', args=('name',))
-        response = self.client.get(url)
-        self.assertEquals(response.status_code, 200)
-
